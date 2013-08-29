@@ -1,0 +1,569 @@
+﻿<!DOCTYPE html>
+
+<html
+xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+
+    <title>Tracker:
+        Ultimate
+        Pro 
+        Gold
+        Elite
+        Premium
+        God Mode
+        Edition
+
+    </title>
+    <link
+        rel="icon"
+        type="image/png"
+        title="Tracker: Ultimate Pro Gold Elite Premium Edition"
+        href="images/tracker_icon_16.png" />
+
+<!--    <link
+        rel="stylesheet"
+        href="styleSheets/jqueryUI/themes/start/jquery.ui.all.css" />-->
+    <link
+        href="styleSheets/jqueryUI/themes/start/jquery-ui.min.css"
+        rel="stylesheet" />
+    <link
+        rel="stylesheet"
+        href="styleSheets/dataTable.css" />
+    <link
+        rel="stylesheet"
+        href="styleSheets/jqPlot/jquery.jqplot.css" />
+    <link
+        rel="stylesheet"
+        href="externalScripts/UILayout/layout-default-latest.css" />
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="styleSheets/main.css"
+        media="screen" />
+</head>
+<body>
+    <div id="trackerWindow">
+        <!--UI Layout Containing Page HTML-->
+        <div class="ui-layout-north panelUIStyle toolbarPanel" id="toolbarPanel">
+            <div>
+                <button id="toolbarAxisDisplay"></button>
+                <button id="tracksLegend">Tracks</button>
+                <button id="trackerHelp">Tracker Help</button>
+                <button id="dataToolButton">Data Tool</button>
+            </div>
+        </div>
+
+        <div class="ui-layout-east panelUIStyle" id="windowPanelBarEast">
+            <div class="ui-layout-center panelUIStyle windowPanel"></div>
+            <div class="ui-layout-south panelUIStyle windowPanel"></div>
+        </div>
+        <div class="ui-layout-center panelUIStyle" id="windowPanelBarWest">
+            <div class="ui-layout-center panelUIStyle" id="videoPanel">
+
+                <div id="popUp">
+                    <div id="loading-gif"
+                        style="padding: 20px; text-align: center;">
+                        <span
+                            id="loading-message"
+                            style="display: none;">Downloading
+                image...</span><br />
+                        <br />
+                        <div id="download-progress">
+                            <div id="download-progress-bar">
+                            </div>
+                            <div id="download-progress-percentage-2">Downloading image 0%</div>
+                            <!--  <div id="download-progress-percentage">0%</div>-->
+                        </div>
+                    </div>
+                    <div id="videoPlayerContainer">
+                        <div id="frameDisplayArea">
+                            <div id="coordinateAxisContainer">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="coordinateAxisSVG" >
+                                    <g></g>
+                                </svg>
+                            </div>
+
+                        </div>
+
+<!--                        <div class="videoPlaybackControlContainer">-->
+
+                        <div id="videoPlaybackControls" class="ui-widget-header">
+                                <span>
+                                    <span id="frameNumberDisplay" title="Current Frame Index" class=""></span>
+
+                                    <span>
+                                        <button name="5" class="speed videoControlButton" id="playPauseButton"></button>
+
+                                    </span>
+
+                                    <span>
+                                        <button id="beginning" class="step videoControlButton"></button>
+
+                                    </span>
+
+                                    <span>
+                                        <input id="speedSelector" title="Playback rate (as a percentage of the original speed)" />
+                                    </span>
+                                    </span>
+
+                                <span style="width: 100%">
+                                    <div id="videoPlayHead">
+                                    </div>
+
+                                </span>
+
+
+                                <span>
+                                    <span>
+                                        <button id="backward" class="step videoControlButton"></button>
+                                    </span>
+                                    <span id="stepSizeDisplay" title="Frame Step Size" class=""></span>
+                                    <span>
+                                        <button id="forward" class="step videoControlButton"></button>
+                                    </span>
+                                    <span>
+                                        <button id="videoLoopBtn" class="step videoControlButton"></button>
+                                    </span>
+
+                                </span>
+                            </div>
+
+
+                 <!--       </div>-->
+
+
+                        <canvas
+                            id="mycanvas"></canvas>
+                        <div id="extract-placeholder">
+                            <canvas
+                                id="mycanvasBackup"
+                                style="display: none;"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-layout-south panelUIStyle" id="windowPanelBarSouthWest">
+                <div class="ui-layout-east panelUIStyle windowPanel"></div>
+                <div class="ui-layout-center panelUIStyle windowPanel"></div>
+
+            </div>
+
+        </div>
+    </div>
+    <!--<div id="footprintContainer"></div>-->
+    <div class="blankDialog" style="display: none" title="">
+    </div>
+
+    <div class="legendDialog" style="display: none" title="">
+    </div>
+
+    <div id="errorDialog" style="display: none" title="">
+        <p></p>
+    </div>
+
+    <div id="dataToolPopup" style ="display: none" title="Data Tool">
+        <span id="dataToolTracksList"></span>
+        <span id="dataToolPlotContainer"></span>
+        <span id="dataToolTableContainer"></span>
+        <span class="generatePlotParams"></span>
+    </div>
+    <!-- Legend track options -->
+    <div id="legendButtonEnumeration" style="display: none">
+        
+        <ul>
+            <li>
+                <li class="legendDropdownNote">
+                    <a href="javascript:">
+                        <span
+                            class="ui-icon  ui-icon-note"
+                            style="float: left;"></span>
+                        Notes
+                    </a>
+                </li>
+                <li class="legendDropdownVisibility">
+                    <a href="javascript:">
+                        <span
+                            class="ui-icon  ui-icon-circle-plus"
+                            style="float: left;"></span>
+                        <p>Hide/Show
+                        </p>
+                    </a>
+                </li>
+                <li class="legendDropdownDisplayLinkedMasses">
+                    <a href="javascript:">
+                        <span
+                            class="ui-icon  ui-icon-comment"
+                            style="float: left;"></span>
+                        <p>Display
+                            Linked
+                            Masses
+                        </p>
+                    </a>
+                </li>
+                <!--       <li class="legendDropdownSelectMasses"><a href="javascript:">
+            <img src="styleSheets/images/notes.png" alt="Icon"><p>Select Masses</p>
+        </a></li>
+        <li class="legendDropdownName"><a href="javascript:">
+            <img src="styleSheets/images/showhide.png" alt="Icon"><p>Name</p>
+        </a></li>
+        <li class="legendDropdownColor"><a href="javascript:">
+            <img src="styleSheets/images/notes.png" alt="Icon"><p>Color</p>
+        </a></li>
+        <li class="legendDropdownFootprints"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Footprints</p>
+        </a></li>
+        <li class="legendDropdownLock"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Lock/Unlock</p>
+        </a></li>
+        <li class="legendDropdownAutotracker"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Autotracker</p>
+        </a></li>
+        <li class="legendDropdownDefine"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Define</p>
+        </a></li>
+        <li class="legendDropdownAutostep"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>AutoStep</p>
+        </a></li>
+        <li class="legendDropdownMarkByDefault"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Mark By Default</p>
+        </a></li>
+        <li class="legendDropdownVelocity"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Velocity</p>
+        </a></li>
+        <li class="LegendDropdownAcceleration"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Acceleration</p>
+        </a></li>
+        <li class="legendDropdownDeleteSelectedStep"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Delete Selected Steps</p>
+        </a></li>
+        <li class="legendDropdownClearSteps"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Clear Steps</p>
+        </a></li>
+        <li class="legendDropdownDelete"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Delete</p>
+        </a></li>
+        <li class="legendDropdownSetProperties"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Set Properties</p>
+        </a></li>
+        <li class="legendDropdownSelectVectors"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Select Vectors</p>
+        </a></li>
+        <li class="legendDropdownOrientation"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Orientation</p>
+        </a></li>
+        <li class="legendDropdownFixedPosition"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Fixed Position</p>
+        </a></li>
+        <li class="legendDropdownFixedRadius"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Fixed Radius</p>
+        </a></li>
+        <li class="legendDropdownModelBuilder"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Model Builder</p>
+        </a></li>
+        <li class="legendDropdownSelectParticles"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Select Particles</p>
+        </a></li>
+        <li class="legendDropdownFixedPosition"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Fixed Position</p>
+        </a></li>
+        <li class="legendDropdownAttachEnds"><a href="javascript:">
+            <img src="images/notes.png" alt="Icon"><p>Attach Ends</p>
+        </a></li>-->
+            </li>
+        </ul>
+    </div>
+    <div class="modal">
+        <div></div>
+    </div>
+    <!--Handlebars Templates-->
+
+    <!--Defines the structure of a window view-->
+    <script type="text/html" id="windowViewTemplate">
+
+        <div class="titleBar ui-widget-header">
+            <div>
+                <div>
+                <select
+                    class="viewType ui-widget-content ui-corner-all">
+                    <option
+                        value="Plot View">Plot
+                            View</option>
+                    <option
+                        value="Table View">Table
+                            View</option>
+<!--                    <option
+                        value="World View">World
+                            View</option>-->
+                    <option
+                        value="Page View">Page
+                            View</option>
+                </select>
+            </div>
+
+            <!--Provides the user with a list of tracks to view-->
+            <div>
+                <select
+                    class="trackSelector ui-widget-content ui-corner-all">{{#eachProperty
+                        tracks}}
+                        <option
+                            value="{{property}}">{{property}}</option>
+                    {{/eachProperty}}
+                </select>
+            </div>
+
+            <div class="windowTitle">Window {{viewIndex}}</div>
+
+                <!-- This div is for the table options or number of plots dropdown -->
+                <div></div>
+        </div>
+        </div>
+
+        <div class="displayArea">
+        </div>
+        <!--Place where the actual content of the window will be placed -->
+        <!--div class="displayArea">
+        </!--div-->
+    </script>
+
+    <script type="text/html" id="plotViewOptionsButtonTemplate">
+
+        <div>
+            <form>
+                {{#eachProperty parameters}}
+           <input class="plotButtons" name="plot" id="{{property}}" type="radio" />
+                <label for="{{property}}" class="check">{{value}}</label><br />
+                {{/eachProperty}}
+            </form>
+        </div>
+
+    </script>
+
+    <script type="text/html" id="legendGeneratorTemplate">
+        <div id="trackLegendContainer">
+            {{#eachProperty parameters}}
+                    <span>
+                        <button class="trackLegendDropDownButton">
+                            <svg class="legendSVG" tracksvg="{{property}}"></svg>
+                            <p>{{property}}</p>
+                        </button>
+                        <ul class="trackLegendDropDownMenu" trackname="{{property}}"></ul>
+                    </span>
+            {{/eachProperty}}   
+        </div>
+    </script>
+
+    <script type="text/html" id="tableViewOptionsButtonTemplate">
+        <div>
+
+            <form>
+                {{#eachProperty parameters}}
+                <input type="checkbox" class="tableButtons" id="{{property}}" />
+                <label for="{{property}}" class="check">{{value}}</label><br />
+                {{/eachProperty}}
+            </form>
+        </div>
+    </script>
+
+    <script type="text/html" id="linkedTracksTemplate">
+        <div id="linkedTracksDialog">
+
+            <form id="linkedTracksForm">
+                {{#each parameters}}
+                <input type="checkbox" trackname="{{this}}" class="linkedPointMasses" id="linkedTrack_input_{{@index}}" />
+                <label for="linkedTrack_input_{{@index}}" class="check">{{this}}</label><br />
+                {{/each}}
+            </form>
+        </div>
+
+
+    </script>
+
+    <script
+        type="text/html"
+        id="trackTableTemplate">
+        <table
+            cellpadding="0"
+            cellspacing="0"
+            border="0"
+            class="display"
+            id="{{id}}"
+            title="{{title}}"
+            class="trackDataTable">
+
+            <thead class="hiddenHeader">
+                <tr class="">
+                    {{#each
+                            columnHeaders}}
+                            <td>{{this}}
+                            </td>
+                    {{/each}}
+                </tr>
+            </thead>
+            {{#each
+                    dataSet}}
+                    <tr class="row{{@index}}">
+                        {{#each
+                        this}}
+                        <td>{{this}}
+                        </td>
+                        {{/each}}
+                    </tr>
+            {{/each}}
+        </table>
+    </script>
+    
+    <script
+        type="text/html"
+        id="tabTemplate">
+        <ul>{{#eachProperty
+                    dataParent}}
+                    <li><a
+                        href="#{{value.idName}}tab">{{property}}</a>
+                    </li>
+            {{/eachProperty}}
+        </ul>
+        {{#eachProperty
+                dataParent}}
+                <div id="{{value.idName}}tab"
+                    class="tableTab ui-widget">
+                    {{{value.html}}}
+                </div>
+        {{/eachProperty}}
+    </script>
+
+
+
+        <script type="text/html" id="dataToolPlotParameters">
+      <span class="dataToolOptionsContainerIndex">
+        <span>
+                <select class="dataToolYParam"
+                    class="ui-widget-content ui-corner-all">
+                {{#eachProperty parameters}}
+                    <option value="{{property}}">{{value}}</option>
+                {{/eachProperty}}
+                    </select>
+        </span>
+            <button class="dataToolGeneratePlotButton">Generate</button>
+            <button>Delete</button>
+            <button>Highlight</button>
+
+        </span>
+            </script>
+        <script type="text/html" id="tracksDropdownTemplate">
+        <select class="viewType ui-widget-content ui-corner-all">{{#eachProperty parameters}}
+                    <option>{{value}}</option>
+                {{/eachProperty}}
+            </select>
+        </script>
+
+            <script type="text/html" id="dataToolXParameterTemplate">
+            <span>
+                <select id="dataToolXParameter"
+                    class="ui-widget-content ui-corner-all">
+                {{#eachProperty parameters}}
+                    <option value="{{property}}">{{value}}</option>
+                {{/eachProperty}}
+                </select>
+        </span>
+        </script>
+
+    <!--Javascript Files-->
+    <script type="text/javascript">
+        var ed = ed || {};
+    </script>
+    <script type="text/javascript">
+        //An extension of the javascript object which returns the number of keys in the object
+        //Useful in may applications where we want to quickly know the number of keys, very similar to array.length
+        //To call: Object.size(objectInQuestion)
+        Object.size = function (obj) {
+            var size = 0, key;
+            for (key in obj) {
+                if (obj.hasOwnProperty(key)) size++;
+            }
+            return size;
+        };
+    </script>
+    <!--<script src="externalScripts/jquery_ui/external/globalize.js"></script>-->
+    <script
+        type="text/javascript"
+        src="externalScripts/jquery/_references.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jquery/jquery-1.10.2.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jquery_ui/jquery-ui.min.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jqTable/jquery.dataTables.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/handlebars/handlebars.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jqPlot/jquery.jqplot.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jqPlot/jqplot.dateAxisRenderer.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jqPlot/jqplot.cursor.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jqPlot/jqplot.canvasAxisLabelRenderer.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jqPlot/jqplot.canvasTextRenderer.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jqPlot/jqplot.canvasAxisTickRenderer.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jqPlot/jqplot.highlighter.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jqPlot/jsplot.dragable.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/UILayout/jquery.layout-latest.js">
+
+    </script>
+    <script type="text/javascript" src="externalScripts/math/math.js">
+
+    </script>
+
+    <script
+        type="text/javascript"
+        src="Scripts/trackerMath.js"></script>
+    <script
+        type="text/javascript"
+        src="Scripts/domain.js"></script>
+    <script
+        type="text/javascript"
+        src="Scripts/globalProperties.js"></script>
+    <script
+        type="text/javascript"
+        src="Scripts/xmlReader.js"></script>
+    <script
+        type="text/javascript"
+        src="Scripts/UIBinder.js"></script>
+    <script
+        type="text/javascript"
+        src="Scripts/main.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/GIFScrubber/ajaxbinary.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/GIFScrubber/base64.js"></script>
+    <script
+        type="text/javascript"
+        src="Scripts/video.js"></script>
+    <script
+        type="text/javascript"
+        src="Scripts/dataTool.js"></script>
+</body>
+
+</html>
+

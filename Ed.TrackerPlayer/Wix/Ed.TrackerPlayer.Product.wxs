@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:iis="http://schemas.microsoft.com/wix/IIsExtension"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension">
+    <Product Id="{CC1ACA94-C1B9-4D95-A46B-3D15F3FE56B7}" 
+             Name="$(var.MsiName)" 
+             Language="1033" 
+             Version="1.0.0.0" 
+             Manufacturer="Edmentum Inc" 
+             UpgradeCode="{00ED3792-50FC-46F3-89DA-F6CA33BD19E5}">
+        <Package InstallerVersion="200" Compressed="yes" />
+        <Media Id="1" Cabinet="MyWeb.cab" EmbedCab="yes" />
+        <Property Id="WIXUI_INSTALLDIR" Value="INSDIR" />
+        <!-- Creating directories -->
+        <Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="INSDIR" Name="$(var.AppName)">
+				<!-- This is the folder where the website content will be located  -->
+			</Directory> 
+        </Directory>
+        <Feature Id="Complete"
+             Title="$(var.AppName)"
+             Level="1"
+             Display="expand"
+             ConfigurableDirectory="INSDIR">
+             <!-- Main content of the Complete feature. -->
+            <Feature Id="MainContent"
+                     Title="$(var.AppName)"
+                     Description="$(var.AppName) Files"
+                     Level="1">
+                <ComponentGroupRef Id="AllComponents" />
+            </Feature>
+        </Feature>
+		<UIRef Id="WixUI_InstallDir" />
+		<UIRef Id="WixUI_ErrorProgressText" />
+	<!-- <CustomAction Id="ConfigureApp_Cmd" Property="ConfigureApp" Execute="immediate"
+        Value="&quot;[INSDIR]\$(var.AppName)\Environments\ConfigureWeb.cmd&quot; &quot;[ENVIRONMENT]&quot; nopause;" />
+    <CustomAction Id="ConfigureApp" BinaryKey="WixCA" DllEntry="CAQuietExec" Execute="deferred" Return="check" Impersonate="no"/> -->
+
+	<InstallExecuteSequence>
+	<!--	<Custom Action="ConfigureApp_Cmd" After="StartServices"><![CDATA[NOT(Installed) AND (ENVIRONMENT <> "") AND (ENVIRONMENT <> "(none)")]]></Custom>
+		<Custom Action="ConfigureApp" After="ConfigureApp_Cmd"><![CDATA[NOT(Installed) AND (ENVIRONMENT <> "") AND (ENVIRONMENT <> "(none)")]]></Custom> -->
+	</InstallExecuteSequence>
+		
+    </Product>
+</Wix>

@@ -1,0 +1,712 @@
+﻿<!DOCTYPE html>
+<html
+xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tracker
+        Mobile
+        Help
+    </title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        title="Tracker Mobile Help"
+        href="images/tracker_icon_16.png" />
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="helpStyling.css" />
+</head>
+<body>
+
+    <div id="headerSection">
+        <h1 id="pageTitle">
+            Tracker
+            Mobile
+            Help
+        </h1>
+        <p>
+            Tracker
+            is a
+            free
+            video
+            analysis
+            and modeling
+            tool
+            designed
+            to be
+            used
+            in physics
+            education.
+            Tracker
+            video
+            modeling
+            is a
+            powerful
+            new way
+            to combine
+            videos
+            with
+            computer
+            modeling
+            based
+            on the
+            Open
+            Source
+            Physics
+            (OSP)
+            Java
+            framework.
+            For more
+            information
+            see the
+            official
+            <a href="http://www.cabrillo.edu/~dbrown/tracker/">
+                Tracker
+                website.</a>
+
+        </p>
+        <p>
+            Tracker
+            Mobile
+            is an
+            Open
+            Source
+            project
+            undertaken
+            by edmentum.
+            Currently
+            it allows
+            much
+            of the
+            viewing
+            functionality
+            of the
+            original
+            Tracker
+            program
+            files
+            to be
+            achieved
+            through
+            a web
+            browser,
+            rather
+            than
+            through
+            a
+            stand-alone
+            application.
+            While
+            Tracker
+            Mobile
+            lacks
+            some
+            of Tracker’s
+            features,
+            there
+            is a
+            lot of
+            room
+            for program
+            expansion.
+            Check
+            out the
+            github
+            (link)
+            and feel
+            free
+            to fork
+            it if
+            you want
+            to get
+            involved!
+        </p>
+    </div>
+
+    <div id="quickNav">
+        <h2>Contents
+        </h2>
+        <div>
+            <ol>
+                <li>
+                    <span
+                        class="sectionSelection">
+                        <a href="#tracksSection">
+                            Tracks</a></span>
+                </li>
+                <li>
+                    <span
+                        class="sectionSelection">
+                        <a href="#trackOptionsSection">
+                            Track
+                            Options</a></span>
+                </li>
+                <li>
+                    <span
+                        class="sectionSelection">
+                        <a href="#videoSection">
+                            Video</a></span>
+                </li>
+                <li>
+                    <span
+                        class="sectionSelection">
+                        <a href="#windowsSection">
+                            Windows</a></span>
+                </li>
+                <li>
+                    <span
+                        class="sectionSelection">
+                        <a href="#coordinateAxisSection">
+                            Coordinate
+                            Axis</a></span>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+
+    <div id="tracksSection"
+        class="section">
+        <h2>Tracks
+        </h2>
+        <p>
+            A track
+            is used
+            to model
+            an element
+            that
+            changes
+            over
+            time.
+            Tracker
+            Mobile
+            can currently
+            show
+            two types
+            of tracks.
+        </p>
+        <h3>Point
+            Mass
+        </h3>
+        <p>
+            A point
+            mass
+            represents
+            a zero
+            dimensional
+            point
+            that
+            has some
+            finite
+            mass.
+            They
+            do not
+            exist
+            in reality,
+            as it
+            is not
+            possible
+            for an
+            object
+            to have
+            mass
+            without
+            volume.
+            However,
+            point
+            masses
+            are the
+            building
+            blocks
+            with
+            which
+            more
+            complex
+            and realistic
+            models
+            of physical
+            systems
+            are constructed
+            in classical
+            physics.
+        </p>
+        <h3>Center
+            of Mass
+        </h3>
+        <p>
+            A center
+            of mass
+            represents
+            the center
+            of mass
+            of a
+            collection
+            of point
+            masses.
+            Its mass
+            is defined
+            as the
+            sum of
+            the masses
+            of the
+            points
+            to which
+            it is
+            linked.
+            Similarly,
+            its steps
+            are not
+            manually
+            marked
+            but instead
+            are determined
+            by the
+            positions
+            and masses
+            of its
+            linked
+            point
+            masses.
+            If all
+            of the
+            linked
+            point
+            masses
+            are equal
+            in weight,
+            the center
+            of mass
+            will
+            appear
+            in the
+            exact
+            center
+            of the
+            linked
+            masses.
+            Otherwise
+            the position
+            of the
+            center
+            of mass
+            to be
+            weighted
+            towards
+            the point
+            masses
+            with
+            the most
+            mass.
+        </p>
+    </div>
+
+    <div id="trackOptionsSection"
+        class="section">
+        <h2>Track
+            Options
+        </h2>
+        <p>
+            Track
+            options
+            are accessible
+            from
+            the "Tracks"
+            button
+            at the
+            top of
+            the page.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/tracks.png" />
+        </div>
+
+
+        <h3>Show
+            or Hide
+        </h3>
+        <p>
+            This
+            option
+            hides
+            or shows
+            the given
+            track
+            on the
+            video.
+            Nothing
+            changes
+            beyond
+            visibility.
+            Since
+            the track
+            still
+            exists,
+            its plot
+            and table
+            information
+            can still
+            be viewed.
+            Showing
+            or hiding
+            a point
+            mass
+            that
+            is linked
+            to a
+            center
+            of mass
+            will
+            not alter
+            the position
+            of the
+            center
+            of mass.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/hide.png" />
+        </div>
+
+        <h3>Notes
+        </h3>
+        <p>
+            These
+            represent
+            any information
+            left
+            behind
+            by the
+            instructor.
+            If left
+            blank
+            by the
+            instructor,
+            nothing
+            will
+            be displayed.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/notesHelp.png" />
+        </div>
+    </div>
+
+
+    <div id="videoSection"
+        class="section">
+        <h2>Video
+        </h2>
+        <p>
+            Tracker
+            Mobile
+            charts
+            the physical
+            locations
+            of point
+            mass
+            tracks
+            and center
+            of mass
+            tracks
+            as the
+            video
+            progresses.
+            Each
+            track
+            is represented
+            by a
+            distinctive
+            shape
+            and color
+            that
+            allows
+            for easy
+            visualization
+            of the
+            object
+            being
+            modeled.
+            The video
+            consists
+            of a
+            series
+            of individual
+            frames
+            which
+            show
+            the position
+            of each
+            track
+            at a
+            given
+            time.
+        </p>
+        <p>
+            The number
+            of the
+            current
+            frame
+            being
+            displayed
+            is represented
+            on the
+            left,
+            and the
+            video
+            play
+            speed
+            is on
+            the right.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/frameNumber.png" />
+        </div>
+        <p>
+            The number
+            represents
+            the step
+            size,
+            or interval
+            between
+            frames
+            being
+            played.
+            The buttons
+            on the
+            right
+            allow
+            the video
+            to be
+            stepped
+            through
+            on a
+            frame
+            by frame
+            basis
+            (image).
+            The button
+            on the
+            far right
+            toggles
+            video
+            looping.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/frameStep.png" />
+        </div>
+    </div>
+
+    <div id="windowsSection"
+        class="section">
+        <h2>Windows
+        </h2>
+        <p>
+            Tracker
+            Mobile
+            currently
+            supports
+            viewing
+            track
+            properties
+            through
+            two view
+            types:
+            <b>plots</b>
+            and <b>tables</b>.
+        </p>
+        <h3>Plots
+        </h3>
+        <p>
+            A plot
+            charts
+            an x
+            parameter
+            against
+            a y parameter
+            in the
+            same
+            color
+            as the
+            selected
+            track.
+            The x
+            and y
+            parameters
+            can be
+            changed
+            by clicking
+            the button
+            next
+            to each
+            respective
+            axis.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/paramChange.png" />
+        </div>
+        <p>
+            The data
+            point
+            associated
+            with
+            the video
+            frame
+            currently
+            being
+            displayed
+            is highlighted
+            as the
+            video
+            plays.
+            Clicking
+            on a
+            plot
+            point
+            while
+            the video
+            is paused
+            will
+            cause
+            the video
+            to jump
+            to the
+            frame
+            associated
+            with
+            that
+            data.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/highlight.png" />
+        </div>
+        <p>
+            Zooming
+            is achieved
+            by clicking
+            and dragging
+            over
+            the desired
+            area.
+            Double
+            clicking
+            on the
+            plot
+            will
+            zoom
+            back
+            out to
+            the default
+            zoom.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/zoom.png" />
+        </div>
+        <p>Windows
+            can also
+            be resized
+            by dragging
+            on their
+            containing
+            bars,
+            or toggled
+            to open
+            and close
+            by clicking
+            on the
+            bars.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/resize.png" />
+        </div>
+
+        <h3>Tables
+        </h3>
+        <p>
+            Tables
+            can display
+            parameter
+            information
+            about
+            any track.
+            Parameters
+            can be
+            changed
+            by clicking
+            the “Table
+            Options”
+            button.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/tableOptions.png" />
+        </div>
+        <p>
+            Clicking
+            on any
+            of the
+            column
+            headers
+            will
+            sort
+            the table
+            by that
+            parameter.
+            The table
+            row associated
+            with
+            the video
+            frame
+            currently
+            being
+            displayed
+            is highlighted
+            as the
+            video
+            plays.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/tableHighlight.png" />
+        </div>
+    </div>
+
+    <div id="coordinateAxisSection"
+        class="section">
+        <h2>Coordinate
+            Axis
+        </h2>
+        <p>
+            The coordinate
+            axis
+            is the
+            reference
+            point
+            for all
+            tracked
+            points.
+            Its positive
+            x-axis
+            is denoted
+            by a
+            small
+            crossbar.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/coordinateAxis.png" />
+        </div>
+        <p>
+            The coordinate
+            axis
+            visibility
+            can be
+            toggled
+            on or
+            off using
+            its menu
+            button.
+        </p>
+        <div class="imageDiv">
+            <img src="/styleSheets/images/coordAxisButton.png" />
+        </div>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html
+xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Tracker Viewer Demo
+    </title>
+</head>
+<body>
+
+    <a href="" class="selector" id="demo.trk">Demo File</a><br />
+    <a href="" class="selector" id="ball_oil.trk">Ball Oil</a><br />
+    <a href="" class="selector" id="parachute_monkey.trk">Parachute Monkey</a><br />
+    <a href="" class="selector" id="PucksCollide.trk">Pucks Collide</a><br />
+    <a href="" class="selector" id="Car_Zoom.trk">Car Zoom</a><br />
+    <a href="" class="selector" id="Snowboard_Jump.trk">Snowboard Jump</a><br />
+    <a href="" class="selector" id="swing.trk">Swing</a><br />
+    <a href="" class="selector" id="Start-up2.trk">Start Up 2</a><br />
+    <a href="" class="selector" id="wheel.trk">Wheel</a><br />
+    <a href="" class="selector" id="CentersOfMass.trk">Center of Mass Demo</a><br />
+    <a href="" class="selector" id="analyticalModel.trk">Analytical Model Test</a><br />
+
+
+
+
+    <script
+        type="text/javascript"
+        src="externalScripts/jquery/_references.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jquery/jquery-1.10.2.js"></script>
+    <script
+        type="text/javascript"
+        src="externalScripts/jquery_ui/ui/jquery-ui.js"></script>
+    <script>
+    $('document').ready(function () {
+        $("a").on("click", function (event) {
+        
+            var trackerFile = this.id;
+            window.open('tracker.html?fileName=' + trackerFile, '_blank');
+            return false;
+        })
+
+    });</script>
+</body>
+</html>

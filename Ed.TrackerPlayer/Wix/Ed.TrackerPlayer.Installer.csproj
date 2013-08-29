@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+	<PropertyGroup>
+		<AppName>Ed.TrackerPlayer</AppName>
+		<ProjectDir>..\$(AppName)</ProjectDir>
+		<MsiName>Ed.TrackerPlayer</MsiName>
+		<MsiOut>bin\Release\$(MsiName).msi</MsiOut>
+		<Wixheat>"C:\Program Files (x86)\WiX Toolset v3.7\bin\heat.exe"</Wixheat>
+		<Wixcandle>"C:\Program Files (x86)\WiX Toolset v3.7\bin\candle.exe"</Wixcandle>
+		<Wixlight>"C:\Program Files (x86)\WiX Toolset v3.7\bin\light.exe"</Wixlight>
+		<BuildOutputDir>..\..\..\..\Binaries\_PublishedWebsites\$(AppName)</BuildOutputDir>
+		<ExcludeItems>..\..\..\..\Binaries\_PublishedWebsites\$(AppName)\bin\*.pdb;..\..\..\..\Binaries\_PublishedWebsites\$(AppName)\bin\*.xml</ExcludeItems>
+		<FileUpgradeFlags>
+		</FileUpgradeFlags>
+		<UpgradeBackupLocation>
+		</UpgradeBackupLocation>
+		<OldToolsVersion>3.5</OldToolsVersion>
+		<SccProjectName>SAK</SccProjectName>
+		<SccLocalPath>SAK</SccLocalPath>
+		<SccAuxPath>SAK</SccAuxPath>
+		<SccProvider>SAK</SccProvider>
+		<ProjectGuid>{2D19DB39-0DCD-419C-B5A1-8F38098AF64C}</ProjectGuid>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<OutputPath>bin\Release\</OutputPath>
+	</PropertyGroup>
+	<ItemGroup>
+		<WixCode Include="$(AppName).Product.wxs" />
+		<WixCode Include="$(AppName).wxs" />
+	</ItemGroup>
+	<ItemGroup>
+		<WixObject Include="$(AppName).Product.wixobj" />
+		<WixObject Include="$(AppName).wixobj" />
+	</ItemGroup>
+	<Target Name="Copyoutput">
+		<RemoveDir Directories="INSTALLDIR" ContinueOnError="false" />
+		<CreateItem Include="$(BuildOutputDir)\**\*.*" Exclude="$(ExcludeItems)">
+		<Output TaskParameter="Include" ItemName="AppFiles" />
+		</CreateItem>
+		<Copy DestinationFolder="INSTALLDIR\$(AppName)\%(RecursiveDir)" SourceFiles="@(AppFiles)" />
+	</Target>
+	<Target Name="Build" DependsOnTargets="Copyoutput">
+		<!-- Harvest all content of published result  -->
+		<Exec Command="$(Wixheat) dir &quot;INSTALLDIR&quot; -dr INSDIR -ke -srd -cg AllComponents -var var.publishDir -gg -out &quot;$(AppName).wxs&quot;" ContinueOnError="false" WorkingDirectory="."/>
+		<!-- At last create an installer-->
+		<Exec Command="$(Wixcandle) -dAppName=$(AppName) -dMsiName=$(MsiName) -dpublishDir=INSTALLDIR -ext WixUIExtension -ext WixUtilExtension -dMyWebResourceDir=. @(WixCode, ' ')" ContinueOnError="false" WorkingDirectory="." />
+		<!-- A message at the end  -->
+		<Message Text="Install package has been created." />
+		<Exec Command="$(Wixlight) -ext WixUIExtension -ext WixUtilExtension -out $(MsiOut) @(WixObject, ' ')" ContinueOnError="false" WorkingDirectory="." />
+	</Target>
+	<Target Name="Clean">
+		<RemoveDir Directories="INSTALLDIR" ContinueOnError="false" />
+	</Target>
+</Project>

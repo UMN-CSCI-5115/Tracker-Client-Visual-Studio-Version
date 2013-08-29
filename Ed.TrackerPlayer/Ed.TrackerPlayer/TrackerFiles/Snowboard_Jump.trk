@@ -1,0 +1,794 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<object class="org.opensourcephysics.cabrillo.tracker.TrackerPanel">
+    <property name="version" type="string">4.05</property>
+    <property name="width" type="double">640.0</property>
+    <property name="height" type="double">360.0</property>
+    <property name="magnification" type="double">1.0000000000000002</property>
+    <property name="center_x" type="int">321</property>
+    <property name="center_y" type="int">183</property>
+    <property name="videoclip" type="object">
+    <object class="org.opensourcephysics.media.core.VideoClip">
+        <property name="video" type="object">
+        <object class="org.opensourcephysics.media.gif.GifVideo">
+            <property name="path" type="string">/content/sharedmedia/trackervideo/Snowboard_Jump.gif</property>
+        </object>
+        </property>
+        <property name="startframe" type="int">0</property>
+        <property name="stepsize" type="int">1</property>
+        <property name="stepcount" type="int">18</property>
+        <property name="starttime" type="double">-600.0</property>
+        <property name="readout" type="string">time</property>
+    </object>
+    </property>
+    <property name="clipcontrol" type="object">
+    <object class="org.opensourcephysics.media.core.StepperClipControl">
+        <property name="rate" type="double">0.19999999999999998</property>
+        <property name="delta_t" type="double">100.0</property>
+        <property name="frame" type="int">0</property>
+    </object>
+    </property>
+    <property name="coords" type="object">
+    <object class="org.opensourcephysics.media.core.ImageCoordSystem">
+        <property name="fixedorigin" type="boolean">true</property>
+        <property name="fixedangle" type="boolean">true</property>
+        <property name="fixedscale" type="boolean">true</property>
+        <property name="locked" type="boolean">false</property>
+        <property name="framedata" type="array" class="[Lorg.opensourcephysics.media.core.ImageCoordSystem$FrameData;">
+            <property name="[0]" type="object">
+            <object class="org.opensourcephysics.media.core.ImageCoordSystem$FrameData">
+                <property name="xorigin" type="double">463.50000000000006</property>
+                <property name="yorigin" type="double">91.49999999999999</property>
+                <property name="angle" type="double">-4.244765767394874</property>
+                <property name="xscale" type="double">72.70734480309824</property>
+                <property name="yscale" type="double">72.70734480309824</property>
+            </object>
+            </property>
+        </property>
+    </object>
+    </property>
+    <property name="tracks" type="collection" class="java.util.ArrayList">
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.CoordAxes">
+            <property name="name" type="string">axes</property>
+            <property name="footprint" type="string">Footprint.BoldSimpleAxes</property>
+            <property name="visible" type="boolean">true</property>
+            <property name="trail" type="boolean">false</property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.PointMass">
+            <property name="mass" type="double">30.0</property>
+            <property name="name" type="string">Legs</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">0</property>
+                <property name="green" type="int">204</property>
+                <property name="blue" type="int">0</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">CircleFootprint.Circle#5 outline spot </property>
+            <property name="visible" type="boolean">true</property>
+            <property name="trail" type="boolean">true</property>
+            <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.PointMass$FrameData;">
+                <property name="[3]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">596.5422396856583</property>
+                    <property name="y" type="double">137.91748526522593</property>
+                </object>
+                </property>
+                <property name="[4]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">549.8624754420433</property>
+                    <property name="y" type="double">123.0648330058939</property>
+                </object>
+                </property>
+                <property name="[5]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">505.30451866404724</property>
+                    <property name="y" type="double">110.33398821218074</property>
+                </object>
+                </property>
+                <property name="[6]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">463.5</property>
+                    <property name="y" type="double">91.5</property>
+                </object>
+                </property>
+            </property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure">
+            <property name="name" type="string">calibration stick</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">0</property>
+                <property name="green" type="int">0</property>
+                <property name="blue" type="int">255</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">Footprint.BoldDoubleTarget</property>
+            <property name="visible" type="boolean">false</property>
+            <property name="trail" type="boolean">false</property>
+            <property name="fixedtape" type="boolean">true</property>
+            <property name="fixedlength" type="boolean">true</property>
+            <property name="readonly" type="boolean">false</property>
+            <property name="stickmode" type="boolean">true</property>
+            <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData;">
+                <property name="[0]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.TapeMeasure$FrameData">
+                    <property name="x1" type="double">454.14709693290234</property>
+                    <property name="y1" type="double">117.69329139504936</property>
+                    <property name="x2" type="double">566.1296660117878</property>
+                    <property name="y2" type="double">146.40471512770137</property>
+                </object>
+                </property>
+            </property>
+            <property name="worldlengths" type="array" class="[Ljava.lang.Double;">
+                <property name="[0]" type="double">1.59</property>
+            </property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.PointMass">
+            <property name="mass" type="double">25.0</property>
+            <property name="name" type="string">Head</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">255</property>
+                <property name="green" type="int">0</property>
+                <property name="blue" type="int">51</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">CircleFootprint.Circle#5 outline spot </property>
+            <property name="visible" type="boolean">false</property>
+            <property name="trail" type="boolean">true</property>
+            <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.PointMass$FrameData;">
+                <property name="[3]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">622.0039292730845</property>
+                    <property name="y" type="double">58.7033398821218</property>
+                </object>
+                </property>
+                <property name="[4]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">575.3241650294696</property>
+                    <property name="y" type="double">44.55795677799607</property>
+                </object>
+                </property>
+                <property name="[5]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">529.5</property>
+                    <property name="y" type="double">26.499999999999975</property>
+                </object>
+                </property>
+                <property name="[6]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">482.50000000000006</property>
+                    <property name="y" type="double">15.499999999999968</property>
+                </object>
+                </property>
+                <property name="[7]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">435.50000000000006</property>
+                    <property name="y" type="double">15.499999999999968</property>
+                </object>
+                </property>
+                <property name="[8]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">386.50000000000006</property>
+                    <property name="y" type="double">22.499999999999975</property>
+                </object>
+                </property>
+                <property name="[9]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">340.5108055009823</property>
+                    <property name="y" type="double">32.53438113948919</property>
+                </object>
+                </property>
+                <property name="[10]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">295.50000000000006</property>
+                    <property name="y" type="double">46.49999999999997</property>
+                </object>
+                </property>
+                <property name="[11]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">249.50000000000006</property>
+                    <property name="y" type="double">67.49999999999999</property>
+                </object>
+                </property>
+                <property name="[12]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">203.30058939096267</property>
+                    <property name="y" type="double">94.77406679764243</property>
+                </object>
+                </property>
+                <property name="[13]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">156.62082514734772</property>
+                    <property name="y" type="double">128.72298624754418</property>
+                </object>
+                </property>
+                <property name="[14]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">109.94106090373279</property>
+                    <property name="y" type="double">162.67190569744596</property>
+                </object>
+                </property>
+                <property name="[15]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">62.55402750491157</property>
+                    <property name="y" type="double">207.9371316306483</property>
+                </object>
+                </property>
+                <property name="[16]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">15.166994106090364</property>
+                    <property name="y" type="double">263.811394891945</property>
+                </object>
+                </property>
+            </property>
+        </object>
+        </property>
+        <property name="item" type="object">
+        <object class="org.opensourcephysics.cabrillo.tracker.PointMass">
+            <property name="mass" type="double">40.0</property>
+            <property name="name" type="string">Tail</property>
+            <property name="color" type="object">
+            <object class="java.awt.Color">
+                <property name="red" type="int">255</property>
+                <property name="green" type="int">0</property>
+                <property name="blue" type="int">255</property>
+                <property name="alpha" type="int">255</property>
+            </object>
+            </property>
+            <property name="footprint" type="string">CircleFootprint.Circle#7 outline spot </property>
+            <property name="visible" type="boolean">false</property>
+            <property name="trail" type="boolean">true</property>
+            <property name="framedata" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.PointMass$FrameData;">
+                <property name="[3]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">636.1493123772103</property>
+                    <property name="y" type="double">103.96856581532415</property>
+                </object>
+                </property>
+                <property name="[4]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">588.0550098231828</property>
+                    <property name="y" type="double">88.40864440078585</property>
+                </object>
+                </property>
+                <property name="[5]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">544.204322200393</property>
+                    <property name="y" type="double">70.01964636542239</property>
+                </object>
+                </property>
+                <property name="[6]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">504.59724950884095</property>
+                    <property name="y" type="double">53.7524557956778</property>
+                </object>
+                </property>
+                <property name="[7]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">464.28290766208255</property>
+                    <property name="y" type="double">45.26522593320235</property>
+                </object>
+                </property>
+                <property name="[8]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">423.2612966601179</property>
+                    <property name="y" type="double">41.72888015717092</property>
+                </object>
+                </property>
+                <property name="[9]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">378.70333988212184</property>
+                    <property name="y" type="double">47.38703339882122</property>
+                </object>
+                </property>
+                <property name="[10]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">333.43811394891947</property>
+                    <property name="y" type="double">59.41060903732809</property>
+                </object>
+                </property>
+                <property name="[11]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">287.46561886051086</property>
+                    <property name="y" type="double">78.50687622789783</property>
+                </object>
+                </property>
+                <property name="[12]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">240.0785854616896</property>
+                    <property name="y" type="double">106.09037328094301</property>
+                </object>
+                </property>
+                <property name="[13]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">192.6915520628684</property>
+                    <property name="y" type="double">139.3320235756385</property>
+                </object>
+                </property>
+                <property name="[14]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">144.5972495088409</property>
+                    <property name="y" type="double">181.7681728880157</property>
+                </object>
+                </property>
+                <property name="[15]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">95.0884086444008</property>
+                    <property name="y" type="double">229.8624754420432</property>
+                </object>
+                </property>
+                <property name="[16]" type="object">
+                <object class="org.opensourcephysics.cabrillo.tracker.PointMass$FrameData">
+                    <property name="x" type="double">45.579567779960726</property>
+                    <property name="y" type="double">284.3222003929273</property>
+                </object>
+                </property>
+            </property>
+        </object>
+        </property>
+    </property>
+    <property name="selectedtrack" type="string">Legs</property>
+    <property name="dividers" type="array" class="[D">
+        <property name="array" type="string">{0.6514690982776089,0.5,0.6994991652754591,0.0}</property>
+    </property>
+    <property name="views" type="array" class="[[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+        <property name="[0]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[0]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">Legs</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">Tail</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">ax</property>
+                            <property name="lines" type="boolean">true</property>
+                            <property name="points" type="boolean">true</property>
+                        </object>
+                        </property>
+                        <property name="linked" type="boolean">false</property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">Head</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">vx</property>
+                            <property name="lines" type="boolean">true</property>
+                            <property name="points" type="boolean">true</property>
+                        </object>
+                        </property>
+                        <property name="linked" type="boolean">false</property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">Legs</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">x</property>
+                            <property name="lines" type="boolean">true</property>
+                            <property name="points" type="boolean">true</property>
+                        </object>
+                        </property>
+                        <property name="linked" type="boolean">false</property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+        <property name="[1]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[0]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.PlotTView">
+                <property name="selected_track" type="string">Legs</property>
+                <property name="track_views" type="collection" class="java.util.ArrayList">
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">Tail</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">ay</property>
+                            <property name="lines" type="boolean">true</property>
+                            <property name="points" type="boolean">true</property>
+                        </object>
+                        </property>
+                        <property name="linked" type="boolean">false</property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">Head</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">ay</property>
+                            <property name="lines" type="boolean">true</property>
+                            <property name="points" type="boolean">true</property>
+                        </object>
+                        </property>
+                        <property name="linked" type="boolean">false</property>
+                    </object>
+                    </property>
+                    <property name="item" type="object">
+                    <object class="org.opensourcephysics.cabrillo.tracker.PlotTrackView">
+                        <property name="track" type="string">Legs</property>
+                        <property name="plot0" type="object">
+                        <object class="org.opensourcephysics.cabrillo.tracker.TrackPlottingPanel">
+                            <property name="x_var" type="string">t</property>
+                            <property name="y_var" type="string">y</property>
+                            <property name="lines" type="boolean">true</property>
+                            <property name="points" type="boolean">true</property>
+                        </object>
+                        </property>
+                        <property name="linked" type="boolean">false</property>
+                    </object>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+        <property name="[2]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">Legs</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">Tail</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                        <property name="[3]" type="string">vx</property>
+                        <property name="[4]" type="string">vy</property>
+                        <property name="[5]" type="string">ax</property>
+                        <property name="[6]" type="string">ay</property>
+                    </property>
+                    <property name="[1]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">Head</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                        <property name="[3]" type="string">vx</property>
+                        <property name="[4]" type="string">vy</property>
+                        <property name="[5]" type="string">ax</property>
+                        <property name="[6]" type="string">ay</property>
+                    </property>
+                    <property name="[2]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">Legs</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                        <property name="[3]" type="string">vx</property>
+                        <property name="[4]" type="string">vy</property>
+                        <property name="[5]" type="string">ax</property>
+                        <property name="[6]" type="string">ay</property>
+                    </property>
+                </property>
+                <property name="column_formats" type="array" class="[[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[[Ljava.lang.String;">
+                        <property name="[0]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">v_{y}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[1]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">θ</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[2]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">θ_{a}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[3]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">a</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[4]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">a_{x}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[5]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">α</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[6]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">v_{x}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[7]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">K</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[8]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">θ_{r}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[9]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">θ_{v}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[10]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">v</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[11]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">θ_{p}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[12]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">ω</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[13]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">t</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[14]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">frame</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[15]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">r</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[16]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">p_{x}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[17]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">p</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[18]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">a_{y}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[19]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">p_{y}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[20]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">y</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[21]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">step</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[22]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Tail</property>
+                            <property name="[1]" type="string">x</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                    </property>
+                    <property name="[1]" type="array" class="[[Ljava.lang.String;">
+                        <property name="[0]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">v_{y}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[1]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">θ</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[2]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">θ_{a}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[3]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">a</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[4]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">a_{x}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[5]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">α</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[6]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">v_{x}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[7]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">K</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[8]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">θ_{r}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[9]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">θ_{v}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[10]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">v</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[11]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">θ_{p}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[12]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">ω</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[13]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">t</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[14]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">frame</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[15]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">r</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[16]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">p_{x}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[17]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">p</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[18]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">a_{y}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[19]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">p_{y}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[20]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">y</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[21]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">step</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[22]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Head</property>
+                            <property name="[1]" type="string">x</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                    </property>
+                    <property name="[2]" type="array" class="[[Ljava.lang.String;">
+                        <property name="[0]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Legs</property>
+                            <property name="[1]" type="string">v_{y}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[1]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Legs</property>
+                            <property name="[1]" type="string">t</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[2]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Legs</property>
+                            <property name="[1]" type="string">a_{y}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[3]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Legs</property>
+                            <property name="[1]" type="string">a_{x}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[4]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Legs</property>
+                            <property name="[1]" type="string">v_{x}</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[5]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Legs</property>
+                            <property name="[1]" type="string">y</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                        <property name="[6]" type="array" class="[Ljava.lang.String;">
+                            <property name="[0]" type="string">Legs</property>
+                            <property name="[1]" type="string">x</property>
+                            <property name="[2]" type="string">0.00</property>
+                        </property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+        <property name="[3]" type="array" class="[Lorg.opensourcephysics.cabrillo.tracker.TView;">
+            <property name="[1]" type="object">
+            <object class="org.opensourcephysics.cabrillo.tracker.TableTView">
+                <property name="selected_track" type="string">Legs</property>
+                <property name="track_columns" type="array" class="[[Ljava.lang.String;">
+                    <property name="[0]" type="array" class="[Ljava.lang.String;">
+                        <property name="[0]" type="string">Legs</property>
+                        <property name="[1]" type="string">x</property>
+                        <property name="[2]" type="string">y</property>
+                        <property name="[3]" type="string">vx</property>
+                        <property name="[4]" type="string">vy</property>
+                        <property name="[5]" type="string">ax</property>
+                        <property name="[6]" type="string">ay</property>
+                    </property>
+                </property>
+            </object>
+            </property>
+        </property>
+    </property>
+    <property name="selected_views" type="array" class="[Ljava.lang.String;">
+        <property name="[0]" type="string">Plot View</property>
+        <property name="[1]" type="string">Plot View</property>
+        <property name="[2]" type="string">Table View</property>
+        <property name="[3]" type="string">Page View</property>
+    </property>
+    <property name="toolbar" type="object">
+    <object class="org.opensourcephysics.cabrillo.tracker.TToolBar">
+        <property name="trace" type="boolean">false</property>
+        <property name="position" type="boolean">true</property>
+        <property name="velocity" type="boolean">false</property>
+        <property name="acceleration" type="boolean">false</property>
+        <property name="labels" type="boolean">false</property>
+        <property name="multiply_by_mass" type="boolean">false</property>
+        <property name="trail_length" type="int">1</property>
+        <property name="stretch" type="int">1</property>
+    </object>
+    </property>
+</object>

@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ed.TrackerPlayer.Installer", "Ed.TrackerPlayer.Installer.csproj", "{2D19DB39-0DCD-419C-B5A1-8F38098AF64C}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tfs.ed.lan:8080/tfs/defaultcollection
+		SccProjectUniqueName0 = Ed.TrackerPlayer.Installer.csproj
+		SccProjectName0 = .
+		SccAuxPath0 = http://tfs.ed.lan:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2D19DB39-0DCD-419C-B5A1-8F38098AF64C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D19DB39-0DCD-419C-B5A1-8F38098AF64C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
